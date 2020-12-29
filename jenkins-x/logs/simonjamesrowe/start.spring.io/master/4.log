@@ -1,0 +1,117 @@
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-zm9kh-4[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1609239363.0551074,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-zm9kh-4[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-zm9kh-4[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-zm9kh-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-simonjamesrowe-start-spring-io-zm9kh-jk8m9[0m
+{"level":"info","ts":1609239370.9777932,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/simonjamesrowe/start.spring.io.git @ v0.0.2 in path /workspace/source"}
+{"level":"warn","ts":1609239370.9779255,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /****/.ssh: file exists"}
+{"level":"info","ts":1609239371.0303879,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-zm9kh-4[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-zm9kh-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:83708c698f55c23b2da5dea768886420f8298202
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-zm9kh-4[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-zm9kh-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-maven-build[0m
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] start.spring.io                                                    [pom]
+[INFO] start.spring.io client                                             [jar]
+[INFO] start.spring.io website                                            [jar]
+[INFO] 
+[INFO] --------------------< io.spring.start:start-parent >--------------------
+[INFO] Building start.spring.io 0.0.1-SNAPSHOT                            [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ start-parent ---
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.1.0:flatten (flatten) @ start-parent ---
+[INFO] Generating flattened POM of project io.spring.start:start-parent:pom:0.0.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ start-parent ---
+[INFO] Installing /workspace/source/.flattened-pom.xml to /home/jenkins/.mvnrepository/io/spring/start/start-parent/0.0.1-SNAPSHOT/start-parent-0.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] --------------------< io.spring.start:start-client >--------------------
+[INFO] Building start.spring.io client 0.0.1-SNAPSHOT                     [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ start-client ---
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.0:install-node-and-yarn (install node and yarn) @ start-client ---
+[INFO] Installing node version v12.13.0
+[INFO] Downloading https://nodejs.org/dist/v12.13.0/node-v12.13.0-linux-x64.tar.gz to /home/jenkins/.mvnrepository/com/github/eirslett/node/12.13.0/node-12.13.0-linux-x64.tar.gz
+[INFO] No proxies configured
+[INFO] No proxy was configured, downloading directly
+[INFO] Unpacking /home/jenkins/.mvnrepository/com/github/eirslett/node/12.13.0/node-12.13.0-linux-x64.tar.gz into /workspace/source/start-client/node/tmp
+[INFO] Copying node binary from /workspace/source/start-client/node/tmp/node-v12.13.0-linux-x64/bin/node to /workspace/source/start-client/node/node
+[INFO] Installed node locally.
+[INFO] Installing Yarn version v1.22.4
+[INFO] Downloading https://github.com/yarnpkg/yarn/releases/download/v1.22.4/yarn-v1.22.4.tar.gz to /home/jenkins/.mvnrepository/com/github/eirslett/yarn/1.22.4/yarn-1.22.4.tar.gz
+[INFO] No proxies configured
+[INFO] No proxy was configured, downloading directly
+Dec 29, 2020 10:56:35 AM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+WARNING: Invalid cookie header: "Set-Cookie: _octo=GH1.1.65435350.1609239395; Path=/; Domain=github.com; Expires=Wed, 29 Dec 2021 10:56:35 GMT; Secure; SameSite=Lax". Invalid 'expires' attribute: Wed, 29 Dec 2021 10:56:35 GMT
+Dec 29, 2020 10:56:35 AM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+WARNING: Invalid cookie header: "Set-Cookie: logged_in=no; Path=/; Domain=github.com; Expires=Wed, 29 Dec 2021 10:56:35 GMT; HttpOnly; Secure; SameSite=Lax". Invalid 'expires' attribute: Wed, 29 Dec 2021 10:56:35 GMT
+[INFO] Unpacking /home/jenkins/.mvnrepository/com/github/eirslett/yarn/1.22.4/yarn-1.22.4.tar.gz into /workspace/source/start-client/node/yarn
+[INFO] Installed Yarn locally.
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.0:yarn (yarn install) @ start-client ---
+[INFO] Running 'yarn ' in /workspace/source/start-client
+[INFO] yarn install v1.22.4
+[INFO] [1/4] Resolving packages...
+[INFO] [2/4] Fetching packages...
+[INFO] info fsevents@1.2.13: The platform "linux" is incompatible with this module.
+[INFO] info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
+[INFO] info fsevents@2.1.3: The platform "linux" is incompatible with this module.
+[INFO] info "fsevents@2.1.3" is an optional dependency and failed compatibility check. Excluding it from installation.
+[INFO] [3/4] Linking dependencies...
+[INFO] [4/4] Building fresh packages...
+[INFO] info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+[INFO] error /workspace/source/start-client/node_modules/fibers: Command failed.
+[INFO] Exit code: 127
+[INFO] Command: node build.js || nodejs build.js
+[INFO] Arguments: 
+[INFO] Directory: /workspace/source/start-client/node_modules/fibers
+[INFO] Output:
+[INFO] `linux-x64-72-glibc` exists; testing
+[INFO] Problem with the binary; manual build incoming
+[INFO] spawn node-gyp ENOENT
+[INFO] node-gyp not found! Please ensure node-gyp is in your PATH--
+[INFO] Try running: `sudo npm install -g node-gyp`
+[INFO] /bin/sh: nodejs: command not found
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for start.spring.io 0.0.1-SNAPSHOT:
+[INFO] 
+[INFO] start.spring.io .................................... SUCCESS [  8.583 s]
+[INFO] start.spring.io client ............................. FAILURE [01:35 min]
+[INFO] start.spring.io website ............................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:47 min
+[INFO] Finished at: 2020-12-29T10:58:03Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.github.eirslett:frontend-maven-plugin:1.10.0:yarn (yarn install) on project start-client: Failed to run task: 'yarn ' failed. org.apache.commons.exec.ExecuteException: Process exited with an error: 127 (Exit value: 127) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :start-client
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-maven-build'. The execution of the pipeline has stopped.[0m
