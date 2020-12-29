@@ -1,0 +1,23 @@
+buildPack: maven-java11
+pipelineConfig:
+  pipelines:
+    pullRequest:
+      build:
+        replace: true
+        steps:
+          - sh: mvn clean install -DskipTests
+            name: maven-build
+          - sh: skaffold version
+            name: skaffold-version
+          - sh: export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml
+            name: container-build
+    release:
+      build:
+        replace: true
+        steps:
+          - sh: mvn clean install -DskipTests
+            name: maven-build
+          - sh: skaffold version
+            name: skaffold-version
+          - sh: export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml
+            name: container-build
