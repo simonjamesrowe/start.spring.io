@@ -27,9 +27,11 @@ pipelineConfig:
         steps:
           - sh: cd start-client && yarn install && yarn build
             name: yarn-build
-          - sh: mvn clean install -DskipTests
+          - sh: mvn install -DskipTests
             name: maven-build
           - sh: skaffold version
             name: skaffold-version
-          - sh: export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml
+          - sh: export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml
             name: container-build
+          - sh: jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)
+            name: post-build
