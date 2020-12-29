@@ -1,0 +1,76 @@
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-586rg-6[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1609251440.8422637,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-586rg-6[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-586rg-6[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-586rg-6[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-simonjamesrowe-start-spring-io-586rg-xjb4v[0m
+{"level":"info","ts":1609251449.2001748,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/simonjamesrowe/start.spring.io.git @ v0.0.4 in path /workspace/source"}
+{"level":"warn","ts":1609251449.200691,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /****/.ssh: file exists"}
+{"level":"info","ts":1609251449.2537851,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-586rg-6[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-586rg-6[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:543a6c383a3e7d3cd1555be3b88f7dec7f729f6e
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-586rg-6[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-586rg-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-maven-build[0m
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] start.spring.io                                                    [pom]
+[INFO] start.spring.io client                                             [jar]
+[INFO] start.spring.io website                                            [jar]
+[INFO] 
+[INFO] --------------------< io.spring.start:start-parent >--------------------
+[INFO] Building start.spring.io 0.0.1-SNAPSHOT                            [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ start-parent ---
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.1.0:flatten (flatten) @ start-parent ---
+[INFO] Generating flattened POM of project io.spring.start:start-parent:pom:0.0.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ start-parent ---
+[INFO] Installing /workspace/source/.flattened-pom.xml to /home/jenkins/.mvnrepository/io/spring/start/start-parent/0.0.1-SNAPSHOT/start-parent-0.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] --------------------< io.spring.start:start-client >--------------------
+[INFO] Building start.spring.io client 0.0.1-SNAPSHOT                     [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ start-client ---
+[INFO] 
+[INFO] --- frontend-maven-plugin:1.10.0:yarn (yarn install) @ start-client ---
+[INFO] Running 'yarn ' in /workspace/source/start-client
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for start.spring.io 0.0.1-SNAPSHOT:
+[INFO] 
+[INFO] start.spring.io .................................... SUCCESS [  6.901 s]
+[INFO] start.spring.io client ............................. FAILURE [  2.029 s]
+[INFO] start.spring.io website ............................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.924 s
+[INFO] Finished at: 2020-12-29T14:17:46Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.github.eirslett:frontend-maven-plugin:1.10.0:yarn (yarn install) on project start-client: Failed to run task: 'yarn ' failed. java.io.IOException: Cannot run program "/workspace/source/start-client/node/yarn/dist/bin/yarn" (in directory "/workspace/source/start-client"): error=2, No such file or directory -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :start-client
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-maven-build'. The execution of the pipeline has stopped.[0m
