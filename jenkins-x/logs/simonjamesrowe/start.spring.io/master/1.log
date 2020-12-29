@@ -1,0 +1,115 @@
+
+Showing logs for build [32mmeta-simonjamesrowe-start-sprin-l2ldd-1[0m stage [32mmeta-pipeline[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1609238417.6875174,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-simonjamesrowe-start-sprin-l2ldd-1[0m stage [32mmeta-pipeline[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mmeta-simonjamesrowe-start-sprin-l2ldd-1[0m stage [32mmeta-pipeline[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mmeta-simonjamesrowe-start-sprin-l2ldd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-simonjamesrowe-start-sprin-l2ldd-khszg[0m
+{"level":"info","ts":1609238425.7107859,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/simonjamesrowe/start.spring.io.git @ master in path /workspace/source"}
+{"level":"warn","ts":1609238425.7109947,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /****/.ssh: file exists"}
+{"level":"info","ts":1609238425.7658734,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mmeta-simonjamesrowe-start-sprin-l2ldd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmeta-simonjamesrowe-start-sprin-l2ldd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmeta-simonjamesrowe-start-sprin-l2ldd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mmeta-simonjamesrowe-start-sprin-l2ldd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Effective pipeline written to jenkins-x-effective.yml
+
+Showing logs for build [32mmeta-simonjamesrowe-start-sprin-l2ldd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+running command: echo \$(**-release-version) > VERSION
+
+running command: mvn versions:set -DnewVersion=\$(cat VERSION)
+[INFO] Scanning for projects...
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-starter-parent/2.4.1/spring-boot-starter-parent-2.4.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-starter-parent/2.4.1/spring-boot-starter-parent-2.4.1.pom (8.6 kB at 14 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-dependencies/2.4.1/spring-boot-dependencies-2.4.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-dependencies/2.4.1/spring-boot-dependencies-2.4.1.pom (108 kB at 845 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/spring/initializr/initializr-bom/0.10.0-SNAPSHOT/maven-metadata.xml
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/spring/initializr/initializr-bom/0.10.0-SNAPSHOT/initializr-bom-0.10.0-SNAPSHOT.pom
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/datastax/oss/java-driver-bom/4.9.0/java-driver-bom-4.9.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/datastax/oss/java-driver-bom/4.9.0/java-driver-bom-4.9.0.pom (4.1 kB at 64 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/dropwizard/metrics/metrics-bom/4.1.16/metrics-bom-4.1.16.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/dropwizard/metrics/metrics-bom/4.1.16/metrics-bom-4.1.16.pom (5.3 kB at 144 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/dropwizard/metrics/metrics-parent/4.1.16/metrics-parent-4.1.16.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/dropwizard/metrics/metrics-parent/4.1.16/metrics-parent-4.1.16.pom (16 kB at 290 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/groovy/groovy-bom/2.5.14/groovy-bom-2.5.14.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/groovy/groovy-bom/2.5.14/groovy-bom-2.5.14.pom (26 kB at 283 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/infinispan/infinispan-bom/11.0.8.Final/infinispan-bom-11.0.8.Final.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/infinispan/infinispan-bom/11.0.8.Final/infinispan-bom-11.0.8.Final.pom (19 kB at 230 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/infinispan/infinispan-build-configuration-parent/11.0.8.Final/infinispan-build-configuration-parent-11.0.8.Final.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/infinispan/infinispan-build-configuration-parent/11.0.8.Final/infinispan-build-configuration-parent-11.0.8.Final.pom (13 kB at 208 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jboss/jboss-parent/36/jboss-parent-36.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jboss/jboss-parent/36/jboss-parent-36.pom (66 kB at 866 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/fasterxml/jackson/jackson-bom/2.11.3/jackson-bom-2.11.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/fasterxml/jackson/jackson-bom/2.11.3/jackson-bom-2.11.3.pom (14 kB at 683 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/fasterxml/jackson/jackson-parent/2.11/jackson-parent-2.11.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/fasterxml/jackson/jackson-parent/2.11/jackson-parent-2.11.pom (7.8 kB at 408 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/fasterxml/oss-parent/38/oss-parent-38.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/fasterxml/oss-parent/38/oss-parent-38.pom (23 kB at 1.2 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/glassfish/jersey/jersey-bom/2.32/jersey-bom-2.32.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/glassfish/jersey/jersey-bom/2.32/jersey-bom-2.32.pom (19 kB at 273 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/eclipse/ee4j/project/1.0.6/project-1.0.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/eclipse/ee4j/project/1.0.6/project-1.0.6.pom (13 kB at 741 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/eclipse/jetty/jetty-bom/9.4.35.v20201120/jetty-bom-9.4.35.v20201120.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/eclipse/jetty/jetty-bom/9.4.35.v20201120/jetty-bom-9.4.35.v20201120.pom (18 kB at 190 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/junit/junit-bom/5.7.0/junit-bom-5.7.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/junit/junit-bom/5.7.0/junit-bom-5.7.0.pom (5.1 kB at 77 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlin/kotlin-bom/1.4.21/kotlin-bom-1.4.21.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlin/kotlin-bom/1.4.21/kotlin-bom-1.4.21.pom (9.3 kB at 156 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.4.2/kotlinx-coroutines-bom-1.4.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.4.2/kotlinx-coroutines-bom-1.4.2.pom (4.1 kB at 70 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/logging/log4j/log4j-bom/2.13.3/log4j-bom-2.13.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/logging/log4j/log4j-bom/2.13.3/log4j-bom-2.13.3.pom (7.6 kB at 425 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/logging/logging-parent/1/logging-parent-1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/logging/logging-parent/1/logging-parent-1.pom (3.2 kB at 211 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/18/apache-18.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/18/apache-18.pom (16 kB at 979 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/micrometer/micrometer-bom/1.6.2/micrometer-bom-1.6.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/micrometer/micrometer-bom/1.6.2/micrometer-bom-1.6.2.pom (6.8 kB at 87 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/netty/netty-bom/4.1.55.Final/netty-bom-4.1.55.Final.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/netty/netty-bom/4.1.55.Final/netty-bom-4.1.55.Final.pom (8.8 kB at 204 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (4.8 kB at 345 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/oracle/database/jdbc/ojdbc-bom/19.8.0.0/ojdbc-bom-19.8.0.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/oracle/database/jdbc/ojdbc-bom/19.8.0.0/ojdbc-bom-19.8.0.0.pom (12 kB at 218 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/r2dbc/r2dbc-bom/Arabba-SR8/r2dbc-bom-Arabba-SR8.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/r2dbc/r2dbc-bom/Arabba-SR8/r2dbc-bom-Arabba-SR8.pom (4.1 kB at 105 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/projectreactor/reactor-bom/2020.0.2/reactor-bom-2020.0.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/projectreactor/reactor-bom/2020.0.2/reactor-bom-2020.0.2.pom (4.5 kB at 39 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/rsocket/rsocket-bom/1.1.0/rsocket-bom-1.1.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/rsocket/rsocket-bom/1.1.0/rsocket-bom-1.1.0.pom (2.6 kB at 25 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/data/spring-data-bom/2020.0.2/spring-data-bom-2020.0.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/data/spring-data-bom/2020.0.2/spring-data-bom-2020.0.2.pom (5.9 kB at 98 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/spring-framework-bom/5.3.2/spring-framework-bom-5.3.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/spring-framework-bom/5.3.2/spring-framework-bom-5.3.2.pom (5.6 kB at 102 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/integration/spring-integration-bom/5.4.2/spring-integration-bom-5.4.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/integration/spring-integration-bom/5.4.2/spring-integration-bom-5.4.2.pom (9.5 kB at 136 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/security/spring-security-bom/5.4.2/spring-security-bom-5.4.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/security/spring-security-bom/5.4.2/spring-security-bom-5.4.2.pom (5.3 kB at 89 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/session/spring-session-bom/2020.0.1/spring-session-bom-2020.0.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/session/spring-session-bom/2020.0.1/spring-session-bom-2020.0.1.pom (2.7 kB at 42 kB/s)
+[ERROR] [ERROR] Some problems were encountered while processing the POMs:
+[ERROR] Non-resolvable import POM: Could not find artifact io.spring.initializr:initializr-bom:pom:0.10.0-SNAPSHOT in nexus (http://nexus/repository/maven-group/) @ io.spring.start:start-parent:${revision}, /workspace/source/pom.xml, line 49, column 16
+ @ 
+[ERROR] The build could not read 1 project -> [Help 1]
+[ERROR]   
+[ERROR]   The project io.spring.start:start-parent:0.0.1-SNAPSHOT (/workspace/source/pom.xml) has 1 error
+[ERROR]     Non-resolvable import POM: Could not find artifact io.spring.initializr:initializr-bom:pom:0.10.0-SNAPSHOT in nexus (http://nexus/repository/maven-group/) @ io.spring.start:start-parent:${revision}, /workspace/source/pom.xml, line 49, column 16 -> [Help 2]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/UnresolvableModelException
+error: failed to set the version on release pipelines: failed to run '/bin/sh -c mvn versions:set -DnewVersion=$(cat VERSION)' command in directory '/workspace/source', output: ''
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-tekton-crds'. The execution of the pipeline has stopped.[0m
