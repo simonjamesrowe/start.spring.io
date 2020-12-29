@@ -5,7 +5,9 @@ pipelineConfig:
       build:
         replace: true
         steps:
-          - sh: mvn clean install -DskipTests
+          - sh: cd start-client && yarn install && yarn build
+            name: yarn-build
+          - sh: mvn install -DskipTests
             name: maven-build
           - sh: skaffold version
             name: skaffold-version
@@ -23,6 +25,8 @@ pipelineConfig:
       build:
         replace: true
         steps:
+          - sh: cd start-client && yarn install && yarn build
+            name: yarn-build
           - sh: mvn clean install -DskipTests
             name: maven-build
           - sh: skaffold version
