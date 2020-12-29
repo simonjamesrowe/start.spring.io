@@ -1,7 +1,8 @@
 buildPack: maven-java11
 pipelineConfig:
   env:
-    - APP_NAME: start
+    - name: APP_NAME
+      value: start
   pipelines:
     pullRequest:
       build:
