@@ -13,4 +13,4 @@ dependencies:
   # !! Place custom dependencies above !!
 - alias: preview
   name: start
-  repository: file://../start
+  repository: file://../start.spring.io

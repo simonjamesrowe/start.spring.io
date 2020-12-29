@@ -2,7 +2,7 @@ apiVersion: skaffold/v1beta2
 kind: Config
 build:
   artifacts:
-  - image: simonjamesrowe/start
+  - image: simonjamesrowe/start.spring.io
     context: .
     docker: {}
   tagPolicy:
@@ -22,7 +22,7 @@ profiles:
     helm:
       releases:
       - name: start
-        chartPath: charts/start
+        chartPath: charts/start.spring.io
         setValueTemplates:
           image.repository: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}'
           image.tag: '{{.DIGEST_HEX}}'
