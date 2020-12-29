@@ -1,8 +1,5 @@
 buildPack: maven-java11
 pipelineConfig:
-  env:
-    - name: APP_NAME
-      value: start
   pipelines:
     pullRequest:
       build:
@@ -16,6 +13,20 @@ pipelineConfig:
             name: skaffold-version
           - sh: export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml
             name: container-build
+      postBuild:
+        replace: true
+        steps:
+          - sh: jx step post build --image $DOCKER_REGISTRY/$ORG/start:$PREVIEW_VERSION
+            name: post-build
+      promote:
+        replace: true
+        steps:
+          - dir: charts/preview
+            steps:
+              - sh: make preview
+                name: make-preview
+              - sh: jx preview --app start --dir ../..
+                name: jx-preview
     release:
       setVersion:
         replace: true
@@ -36,5 +47,18 @@ pipelineConfig:
             name: skaffold-version
           - sh: export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml
             name: container-build
-          - sh: jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)
+          - sh: jx step post build --image $DOCKER_REGISTRY/$ORG/start:\$(cat VERSION)
             name: post-build
+      promote:
+        replace: true
+        steps:
+          - dir: charts/start
+            steps:
+              - sh: jx step changelog --version v\$(cat ../../VERSION)
+                name: changelog
+              - comment: release the helm chart
+                sh: jx step helm release
+                name: helm-release
+              - comment: promote through all 'Auto' promotion Environments
+                sh: jx promote -b --all-auto --timeout 1h --version \$(cat ../../VERSION)
+                name: jx-promote
