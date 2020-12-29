@@ -1,4 +1,4 @@
-{{- if or .Values.knativeDeploy .Values.canary.enabled }}
+{{- if .Values.canary.enabled }}
 {{- else }}
 apiVersion: v1
 kind: Service
