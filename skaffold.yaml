@@ -21,7 +21,7 @@ profiles:
   deploy:
     helm:
       releases:
-      - name: start
+      - name: start.spring.io
         chartPath: charts/start.spring.io
         setValueTemplates:
           image.repository: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}'
