@@ -1,0 +1,41 @@
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-dlpt5-3[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1609239183.633712,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-dlpt5-3[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-dlpt5-3[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-dlpt5-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-simonjamesrowe-start-spring-io-dlpt5-4vf8b[0m
+{"level":"info","ts":1609239192.7015548,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/simonjamesrowe/start.spring.io.git @ v0.0.1 in path /workspace/source"}
+{"level":"warn","ts":1609239192.701689,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /****/.ssh: file exists"}
+{"level":"info","ts":1609239192.7529838,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-dlpt5-3[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-dlpt5-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e889a1633e92e1ab88ca004f35f6a713c3add7d7
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-dlpt5-3[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-dlpt5-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-maven-build[0m
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+[INFO] Scanning for projects...
+[ERROR] [ERROR] Some problems were encountered while processing the POMs:
+[ERROR] Non-resolvable import POM: Could not find artifact io.spring.initializr:initializr-bom:pom:0.10.0-SNAPSHOT in nexus (http://nexus/repository/maven-group/) @ io.spring.start:start-parent:${revision}, /workspace/source/pom.xml, line 49, column 16
+ @ 
+[ERROR] The build could not read 1 project -> [Help 1]
+[ERROR]   
+[ERROR]   The project io.spring.start:start-parent:0.0.1-SNAPSHOT (/workspace/source/pom.xml) has 1 error
+[ERROR]     Non-resolvable import POM: Could not find artifact io.spring.initializr:initializr-bom:pom:0.10.0-SNAPSHOT in nexus (http://nexus/repository/maven-group/) @ io.spring.start:start-parent:${revision}, /workspace/source/pom.xml, line 49, column 16 -> [Help 2]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/UnresolvableModelException
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-maven-build'. The execution of the pipeline has stopped.[0m
