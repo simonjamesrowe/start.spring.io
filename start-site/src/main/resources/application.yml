@@ -27,6 +27,8 @@ spring:
         use-last-modified: false
 
 initializr:
+  group-id:
+    value: com.simonjamesrowe
   env:
     boms:
       azure:
@@ -230,6 +232,10 @@ initializr:
       sonatype-snapshots:
         name: Sonatype Snapshots
         url: https://oss.sonatype.org/content/repositories/snapshots/
+        snapshotsEnabled: true
+      simonjamesrowe:
+        name: Simon James Rowe
+        url: https://nexus-jx.simonjamesrowe.com/repository/maven-group/
         snapshotsEnabled: true
   dependencies:
     - name: Developer Tools
@@ -987,6 +993,17 @@ initializr:
           artifactId: spring-restdocs-mockmvc
           scope: test
           starter: false
+        - name: Component Test
+          id: component-test
+          description: Spring Component Tests with Test Containers
+          groupId: com.simonjamesrowe
+          artifactId: component-test
+          version: 0.0.5
+          scope: test
+          starter: false
+          links:
+            - rel: reference
+              href: https://github.com/simonjamesrowe/component-test
         - name: Testcontainers
           id: testcontainers
           description: Provide lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container.
@@ -1482,45 +1499,18 @@ initializr:
               href: https://github.com/alibaba/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-examples/sentinel-example/sentinel-core-example
               description: Sentinel Example
   types:
-    - name: Maven Project
-      id: maven-project
-      description: Generate a Maven based project archive.
-      tags:
-        build: maven
-        format: project
-      default: true
-      action: /starter.zip
-    - name: Maven POM
-      id: maven-build
-      description: Generate a Maven pom.xml.
-      tags:
-        build: maven
-        format: build
-      default: false
-      action: /pom.xml
     - name: Gradle Project
       id: gradle-project
       description: Generate a Gradle based project archive.
       tags:
         build: gradle
         format: project
-      default: false
+      default: true
       action: /starter.zip
-    - name: Gradle Config
-      id: gradle-build
-      description: Generate a Gradle build file.
-      tags:
-        build: gradle
-        format: build
-      default: false
-      action: /build.gradle
   packagings:
     - name: Jar
       id: jar
       default: true
-    - name: War
-      id: war
-      default: false
   javaVersions:
     - id: 15
       default: false
@@ -1530,15 +1520,9 @@ initializr:
       name: 8
       default: false
   languages:
-    - name: Java
-      id: java
-      default: true
     - name: Kotlin
       id: kotlin
-      default: false
-    - name: Groovy
-      id: groovy
-      default: false
+      default: true
   bootVersions:
     - name : Latest SNAPSHOT
       id: 2.2.0.BUILD-SNAPSHOT
