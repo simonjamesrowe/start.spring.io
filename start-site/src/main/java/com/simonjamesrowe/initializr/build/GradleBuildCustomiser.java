@@ -11,42 +11,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class GradleBuildCustomiser extends KotlinDslGradleBuildWriter implements BuildCustomizer<GradleBuild> {
 
-    @Autowired
-    private MutableProjectDescription mutableProjectDescription;
+	@Autowired
+	private MutableProjectDescription mutableProjectDescription;
 
-    @Override
-    public void customize(GradleBuild build) {
-        build.repositories().add(MavenRepository.withIdAndUrl("simonjamesrowe", "https://nexus-jx.simonjamesrowe.com/repository/maven-group/").build());
-        build.dependencies().add("component-test");
-    }
+	@Override
+	public void customize(GradleBuild build) {
+		build.repositories().add(MavenRepository
+				.withIdAndUrl("simonjamesrowe", "https://nexus-jx.simonjamesrowe.com/repository/maven-group/").build());
+		build.dependencies().add("component-test");
+	}
 
-    @Override
-    protected void writeTasks(IndentingWriter writer, GradleTaskContainer tasks) {
-        if (mutableProjectDescription.getArtifactId().startsWith("lib")) {
-            String extraTasks =
-                    "\ntasks.getByName<Jar>(\"jar\") {\n" +
-                            "\tenabled = true\n" +
-                            "}\n" +
-                            "\n" +
-                            "tasks.getByName<Jar>(\"bootJar\") {\n" +
-                            "\tenabled = false\n" +
-                            "}";
-            writer.println(extraTasks);
-        }
+	@Override
+	protected void writeTasks(IndentingWriter writer, GradleTaskContainer tasks) {
+		if (mutableProjectDescription.getArtifactId().startsWith("lib")) {
+			String extraTasks = "\ntasks.getByName<Jar>(\"jar\") {\n" + "\tenabled = true\n" + "}\n" + "\n"
+					+ "tasks.getByName<Jar>(\"bootJar\") {\n" + "\tenabled = false\n" + "}";
+			writer.println(extraTasks);
+		}
 
-        String publishing =
-                "\npublishing {\n" +
-                        "\tpublications {\n" +
-                        "\t\tcreate<MavenPublication>(\"maven\") {\n" +
-                        "\t\t\tfrom(components[\"java\"])\n" +
-                        "\t\t}\n" +
-                        "\t}\n" +
-                        "}";
-        writer.println(publishing);
-    }
+		String publishing = "\npublishing {\n" + "\tpublications {\n" + "\t\tcreate<MavenPublication>(\"maven\") {\n"
+				+ "\t\t\tfrom(components[\"java\"])\n" + "\t\t}\n" + "\t}\n" + "}";
+		writer.println(publishing);
+	}
 
-    @Override
-    public int getOrder() {
-        return 0;
-    }
+	@Override
+	public int getOrder() {
+		return 0;
+	}
+
 }

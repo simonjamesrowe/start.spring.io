@@ -11,11 +11,14 @@ const FILE_EXTENSION = {
   xml: 'xml',
   properties: 'properties',
   groovy: 'groovy',
+  yaml: 'yaml',
+  yml: "yml",
+  Dockerfile: "Dockerfile"
 }
 
 export const getLanguage = file => {
   if (!file.includes(`.`)) {
-    return null
+    return get(FILE_EXTENSION, file, file)
   }
   const extension = file.split(`.`).pop()
   return get(FILE_EXTENSION, extension, null)

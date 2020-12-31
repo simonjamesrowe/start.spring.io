@@ -22,14 +22,6 @@ describe('getLanguage', () => {
     expect(getLanguage('index.properties')).toBe('properties')
     expect(getLanguage('index.groovy')).toBe('groovy')
   })
-  it('should not return the extention', () => {
-    expect(getLanguage('index.php')).toBe(null)
-    expect(getLanguage('index.html')).toBe(null)
-    expect(getLanguage('index.css')).toBe(null)
-    expect(getLanguage('index.scss')).toBe(null)
-    expect(getLanguage('mvnw')).toBe(null)
-    expect(getLanguage('command.cmd')).toBe(null)
-  })
 })
 
 /**

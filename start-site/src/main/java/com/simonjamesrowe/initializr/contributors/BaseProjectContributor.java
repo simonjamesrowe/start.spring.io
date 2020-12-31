@@ -5,29 +5,48 @@ import io.spring.initializr.generator.io.template.MustacheTemplateRenderer;
 import io.spring.initializr.generator.project.MutableProjectDescription;
 import io.spring.initializr.generator.project.contributor.ProjectContributor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.Cache
+import org.springframework.cache.Cache;
 
 import javax.annotation.PostConstruct;
 import java.util.Map;
 
 public abstract class BaseProjectContributor implements ProjectContributor {
-    @Autowired
-    protected MutableProjectDescription mutableProjectDescription;
 
-    @Autowired(required = false)
-    protected GradleBuild gradleBuild;
+	@Autowired
+	protected MutableProjectDescription mutableProjectDescription;
 
-    @Autowired
-    protected Cache cache;
+	@Autowired(required = false)
+	protected GradleBuild gradleBuild;
 
-    protected MustacheTemplateRenderer mustacheTemplateRenderer;
+	@Autowired
+	protected Cache cache;
 
-    @PostConstruct
-    public void postInit() {
-        mustacheTemplateRenderer = new MustacheTemplateRenderer("classpath:/templates/", cache)
-    }
+	protected MustacheTemplateRenderer mustacheTemplateRenderer;
 
-    protected Map<String,?> parameters() {
-        return Map.of( "artifactId" , mutableProjectDescription.getArtifactId());
-    }
+	@PostConstruct
+	public void postInit() {
+		mustacheTemplateRenderer = new MustacheTemplateRenderer("classpath:/templates/", cache);
+	}
+
+	protected Map<String, ?> parameters() {
+		return Map.of("artifactId", mutableProjectDescription.getArtifactId());
+	}
+
+	protected boolean isLib() {
+		return mutableProjectDescription.getArtifactId().startsWith("lib");
+	}
+
+	protected boolean isService() {
+		return !isLib();
+	}
+
+	protected boolean isGradleBuild() {
+		return gradleBuild != null;
+	}
+
+	@Override
+	public int getOrder() {
+		return 0;
+	}
+
 }
