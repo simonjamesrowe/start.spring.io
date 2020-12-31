@@ -128,7 +128,6 @@ export default function Application() {
           onEscape={onEscape}
         />
       </Suspense>
-      <SideLeft />
       <div id='main'>
         <Header />
         <hr className='divider' />
