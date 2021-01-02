@@ -1,0 +1,526 @@
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1609604517.1629217,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-simonjamesrowe-start-spring-io-5q69t-5z966[0m
+{"level":"info","ts":1609604526.2683842,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/simonjamesrowe/start.spring.io.git @ v0.0.18 in path /workspace/source"}
+{"level":"warn","ts":1609604526.2685966,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /****/.ssh: file exists"}
+{"level":"info","ts":1609604526.3225687,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:6eef8d2f719b093d11d05ad9870089843fa00d25
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-build-yarn-build[0m
+yarn install v1.17.3
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info fsevents@1.2.13: The platform "linux" is incompatible with this module.
+info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
+info fsevents@2.1.3: The platform "linux" is incompatible with this module.
+info "fsevents@2.1.3" is an optional dependency and failed compatibility check. Excluding it from installation.
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+Done in 92.31s.
+yarn run v1.17.3
+$ yarn run test
+$ jest --reporters=jest-standard-reporter
+PASS src/components/utils/__tests__/Version.js (8.617s)
+PASS src/components/utils/__tests__/Zip.js (9.104s)
+PASS src/components/reducer/__tests__/App.js (10.888s)
+PASS src/components/utils/__tests__/ApiUtils.js (11.197s)
+PASS src/components/reducer/__tests__/Initializr.js (11.245s)
+Test Suites: 5 passed, 5 total
+Tests:       50 passed, 50 total
+Snapshots:   0 total
+Time:        21.587s
+$ webpack -p --config webpack.prod.js
+Webpack Bundle Analyzer saved report to /workspace/source/start-client/analysis/bundle-analyzer.html
+Webpack Bundle Analyzer saved stats file to /workspace/source/start-client/analysis/stats.json
+Hash: 93102dd0543e34ac71d7
+Version: webpack 4.44.2
+Time: 38682ms
+Built at: 01/02/2021 4:24:44 PM
+                                            Asset       Size  Chunks                                Chunk Names
+                    chunk-21f38145a54f20b1c28e.js   26.3 KiB       5  [emitted] [immutable]         
+                chunk-21f38145a54f20b1c28e.js.map   47.9 KiB       5  [emitted] [dev]               
+                    chunk-31dcd3616ea8f2668049.js  695 bytes       7  [emitted] [immutable]         
+                chunk-31dcd3616ea8f2668049.js.map   1.63 KiB       7  [emitted] [dev]               
+                    chunk-6f6bc768abe632282c19.js   14.1 KiB       4  [emitted] [immutable]         
+                chunk-6f6bc768abe632282c19.js.map     33 KiB       4  [emitted] [dev]               
+                    chunk-a00ec45c37048c850cd9.js   62.6 KiB       6  [emitted] [immutable]         
+                chunk-a00ec45c37048c850cd9.js.map    154 KiB       6  [emitted] [dev]               
+                    chunk-a22970f07057db98888b.js    206 KiB       2  [emitted] [immutable]         vendors~main
+                chunk-a22970f07057db98888b.js.map    673 KiB       2  [emitted] [dev]               vendors~main
+                    chunk-c13cd5d1d9ae4d20894d.js    108 KiB       0  [emitted] [immutable]         main
+                chunk-c13cd5d1d9ae4d20894d.js.map    193 KiB       0  [emitted] [dev]               main
+                    chunk-c95a5fc6658a72cb4ace.js    254 KiB       3  [emitted] [immutable]  [big]  
+                chunk-c95a5fc6658a72cb4ace.js.map    819 KiB       3  [emitted] [dev]               
+       fonts/09bd29d95e1e8ae765e3ecb5073e0793.eot   31.2 KiB          [emitted]                     
+      fonts/155a389656cf8e3d88b8fd20c19c5873.woff   29.1 KiB          [emitted]                     
+       fonts/2fdab0fac9c9b2d4e925fd62951aceac.eot   31.4 KiB          [emitted]                     
+     fonts/372fc7d16a6da93d61dd2c8014c847d6.woff2   25.7 KiB          [emitted]                     
+       fonts/4614897647dc6f2781d2229cdf78b103.eot   31.1 KiB          [emitted]                     
+      fonts/59b8a9b2d8cbcc586ceade848b2d49ca.woff     29 KiB          [emitted]                     
+      fonts/67ef196488282fd58ff05a84701eecc8.woff   26.2 KiB          [emitted]                     
+     fonts/7b9a798c0a745aa9b5fec632bfccaad7.woff2   23.6 KiB          [emitted]                     
+       fonts/8e2a93024d54fc1eec8cc75fcbed9815.eot   28.2 KiB          [emitted]                     
+     fonts/904e6f24d27eb112a88836a62bbb21ab.woff2   23.3 KiB          [emitted]                     
+     fonts/a4c4274ea3e155c9a0e0877734e5babb.woff2   25.8 KiB          [emitted]                     
+       fonts/a8772e6a02a9637dbace3dc3fdad244c.eot   28.4 KiB          [emitted]                     
+      fonts/ad138f3640cf29792138cc8433e9b4c4.woff   26.1 KiB          [emitted]                     
+       fonts/bbd8bdebb355a7c636cb50f142107013.eot   30.8 KiB          [emitted]                     
+      fonts/c51e5447c82d9a7146495454509948bd.woff   28.6 KiB          [emitted]                     
+      fonts/c9052976e063161a469889bd78956744.woff   29.2 KiB          [emitted]                     
+     fonts/dc6926c36da3e0c92f173fde539a9fdc.woff2   25.8 KiB          [emitted]                     
+     fonts/f193bc290b53e92268366b8d89e31e66.woff2   25.3 KiB          [emitted]                     
+icon_144x144.7d360c62a3c2b77823306d48e19a144b.png   6.16 KiB          [emitted]                     
+icon_192x192.98128bd6ffa452257a0ac3d987a6531f.png   8.35 KiB          [emitted]                     
+icon_256x256.c6962b614f04a9d14dc81291da58638a.png   10.4 KiB          [emitted]                     
+icon_384x384.6d0e437c65dff219d4e3bba28508dbc6.png   19.2 KiB          [emitted]                     
+  icon_48x48.e70b0aaadc8c98fded16e8f57f176cbe.png   1.82 KiB          [emitted]                     
+icon_512x512.58cec44120042452e6c8ecfc15524373.png   21.3 KiB          [emitted]                     
+  icon_72x72.cdd9c12f7f1033478ee4991d6c91d829.png   2.84 KiB          [emitted]                     
+  icon_96x96.03663061806a918699d5042f475affc4.png   3.87 KiB          [emitted]                     
+                            images/icon-48x48.png   2.61 KiB          [emitted]                     
+                       images/initializr-card.jpg   16.3 KiB          [emitted]                     
+                                       index.html   4.04 KiB          [emitted]                     
+                     main-93102dd0543e34ac71d7.js   2.38 KiB       1  [emitted] [immutable]         runtime~main
+                 main-93102dd0543e34ac71d7.js.map   12.3 KiB       1  [emitted] [dev]               runtime~main
+   manifest.e179eb23738df16d5953fa80095a71ad.json   1.31 KiB          [emitted]                     
+Entrypoint main [big] = main-93102dd0543e34ac71d7.js main-93102dd0543e34ac71d7.js.map chunk-a22970f07057db98888b.js chunk-a22970f07057db98888b.js.map chunk-c13cd5d1d9ae4d20894d.js chunk-c13cd5d1d9ae4d20894d.js.map
+  [4] ./src/components/reducer/App.js + 1 modules 5.57 KiB {0} [built]
+      |    2 modules
+  [5] ./src/components/common/icons/index.js + 2 modules 16.2 KiB {0} [built]
+      |    3 modules
+ [10] ./src/components/common/form/index.js + 4 modules 5.54 KiB {0} [built]
+      |    5 modules
+ [24] ./src/components/common/dependency/index.js + 4 modules 15.3 KiB {0} [built]
+      |    5 modules
+ [25] (webpack)/buildin/global.js 472 bytes {2} [built]
+ [30] ./src/components/common/builder/index.js + 9 modules 20.7 KiB {0} [built]
+      |    10 modules
+ [32] ./node_modules/react-transition-group/esm/Transition.js + 1 modules 18.2 KiB {2} [built]
+      |    2 modules
+ [42] ./src/Extend.json 971 bytes {0} [built]
+ [49] ./src/styles/app.scss 567 bytes {0} [built]
+ [50] ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/app.scss 48.6 KiB {0} [built]
+ [52] ./src/fonts/metropolis-regular-webfont.eot 88 bytes {0} [built]
+ [53] ./src/fonts/metropolis-regular-webfont.woff2 90 bytes {0} [built]
+[102] ./src/App.js + 10 modules 37 KiB {0} [built]
+      | ./src/App.js 743 bytes [built]
+      |     + 10 hidden modules
+[231] ./src/components/common/explore/Explore.js + 4 modules 22.4 KiB {5} [built]
+      |    5 modules
+[232] ./src/components/common/share/Share.js + 1 modules 4.92 KiB {4} [built]
+      |    2 modules
+    + 220 hidden modules
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  chunk-c95a5fc6658a72cb4ace.js (254 KiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (316 KiB)
+      main-93102dd0543e34ac71d7.js
+      chunk-a22970f07057db98888b.js
+      chunk-c13cd5d1d9ae4d20894d.js
+
+Child html-webpack-plugin for "index.html":
+     1 asset
+    Entrypoint undefined = index.html
+    [0] ./node_modules/html-webpack-plugin/lib/loader.js!./static/index.html 6.41 KiB {0} [built]
+    [2] (webpack)/buildin/global.js 472 bytes {0} [built]
+    [3] (webpack)/buildin/module.js 497 bytes {0} [built]
+        + 1 hidden module
+Done in 68.52s.
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-build-maven-build[0m
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] start.spring.io                                                    [pom]
+[INFO] start.spring.io client                                             [jar]
+[INFO] start.spring.io website                                            [jar]
+[INFO] 
+[INFO] --------------------< io.spring.start:start-parent >--------------------
+[INFO] Building start.spring.io 0.0.1-SNAPSHOT                            [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.1.0:flatten (flatten) @ start-parent ---
+[INFO] Generating flattened POM of project io.spring.start:start-parent:pom:0.0.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ start-parent ---
+[INFO] Installing /workspace/source/.flattened-pom.xml to /home/jenkins/.mvnrepository/io/spring/start/start-parent/0.0.1-SNAPSHOT/start-parent-0.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] --------------------< io.spring.start:start-client >--------------------
+[INFO] Building start.spring.io client 0.0.1-SNAPSHOT                     [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ start-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /workspace/source/start-client/src/main/resources
+[INFO] skip non existing resourceDirectory /workspace/source/start-client/src/main/resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.1.0:flatten (flatten) @ start-client ---
+[INFO] Generating flattened POM of project io.spring.start:start-client:jar:0.0.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ start-client ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ start-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /workspace/source/start-client/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ start-client ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M1:test (default-test) @ start-client ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:copy-resources (copy-resources) @ start-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 46 resources
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ start-client ---
+[INFO] Building jar: /workspace/source/start-client/target/start-client-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ start-client ---
+[INFO] Installing /workspace/source/start-client/target/start-client-0.0.1-SNAPSHOT.jar to /home/jenkins/.mvnrepository/io/spring/start/start-client/0.0.1-SNAPSHOT/start-client-0.0.1-SNAPSHOT.jar
+[INFO] Installing /workspace/source/start-client/.flattened-pom.xml to /home/jenkins/.mvnrepository/io/spring/start/start-client/0.0.1-SNAPSHOT/start-client-0.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] ---------------------< io.spring.start:start-site >---------------------
+[INFO] Building start.spring.io website 0.0.1-SNAPSHOT                    [3/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:3.0.1:revision (default) @ start-site ---
+[INFO] dotGitDirectory /workspace/source/.git
+[WARNING] Exception caught during execution of command '[git, config, --system, --edit]' in '/usr/local/git/bin', return code '128', error message 'fatal: Invalid path '/usr/local/git/etc': No such file or directory
+'
+[INFO] Collected git.build.user.name with value jenkins-x-bot
+[INFO] Collected git.build.user.email with value jenkins-x@googlegroups.com
+[INFO] Collected git.branch with value master
+[INFO] --always = true
+[INFO] --dirty = -dirty
+[INFO] --abbrev = 7
+[INFO] Tag refs [[]]
+[INFO] Created map: [{}]
+[INFO] evalCommit is [2456726afc8cf22df37a86d1a462570d8c0bad19]
+[INFO] Collected git.commit.id.describe with value 2456726
+[INFO] Collected git.commit.id.describe-short with value 2456726
+[INFO] Collected git.commit.id with value 2456726afc8cf22df37a86d1a462570d8c0bad19
+[INFO] Collected git.commit.id.abbrev with value 2456726
+[INFO] Collected git.dirty with value false
+[INFO] Collected git.commit.user.name with value jenkins-x-bot
+[INFO] Collected git.commit.user.email with value jenkins-x@googlegroups.com
+[INFO] Collected git.commit.message.full with value release 0.0.18
+[INFO] Collected git.commit.message.short with value release 0.0.18
+[INFO] Collected git.commit.time with value 2021-01-02T16:21:47+0000
+[INFO] Collected git.remote.origin.url with value https://github.com/simonjamesrowe/start.spring.io.git
+[INFO] Collected git.tags with value 
+[INFO] evalCommit is [2456726afc8cf22df37a86d1a462570d8c0bad19]
+[INFO] Tag refs [[]]
+[INFO] Created map: [{}]
+[INFO] Collected git.closest.tag.name with value 
+[INFO] evalCommit is [2456726afc8cf22df37a86d1a462570d8c0bad19]
+[INFO] Tag refs [[]]
+[INFO] Created map: [{}]
+[INFO] Collected git.closest.tag.commit.count with value 
+[INFO] Collected git.total.commit.count with value 1
+[ERROR] Failed to perform fetch
+org.eclipse.jgit.api.errors.TransportException: Missing delta base 192edc94b0ec2b6f17ef07e8fd00d79d45e24164
+    at org.eclipse.jgit.api.FetchCommand.call (FetchCommand.java:254)
+    at pl.project13.maven.git.JGitProvider.fetch (JGitProvider.java:352)
+    at pl.project13.maven.git.JGitProvider.getAheadBehind (JGitProvider.java:339)
+    at pl.project13.maven.git.GitDataProvider.lambda$loadGitData$17 (GitDataProvider.java:174)
+    at pl.project13.maven.git.GitDataProvider.lambda$memoize$23 (GitDataProvider.java:272)
+    at pl.project13.maven.git.GitDataProvider.lambda$loadGitData$18 (GitDataProvider.java:175)
+    at pl.project13.maven.git.GitDataProvider.maybePut (GitDataProvider.java:255)
+    at pl.project13.maven.git.GitDataProvider.loadGitData (GitDataProvider.java:175)
+    at pl.project13.maven.git.GitCommitIdMojo.loadGitDataWithJGit (GitCommitIdMojo.java:604)
+    at pl.project13.maven.git.GitCommitIdMojo.loadGitData (GitCommitIdMojo.java:563)
+    at pl.project13.maven.git.GitCommitIdMojo.execute (GitCommitIdMojo.java:458)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.eclipse.jgit.errors.TransportException: Missing delta base 192edc94b0ec2b6f17ef07e8fd00d79d45e24164
+    at org.eclipse.jgit.transport.BasePackFetchConnection.doFetch (BasePackFetchConnection.java:400)
+    at org.eclipse.jgit.transport.TransportHttp$SmartHttpFetchConnection.doFetch (TransportHttp.java:1084)
+    at org.eclipse.jgit.transport.BasePackFetchConnection.fetch (BasePackFetchConnection.java:323)
+    at org.eclipse.jgit.transport.BasePackFetchConnection.fetch (BasePackFetchConnection.java:314)
+    at org.eclipse.jgit.transport.FetchProcess.fetchObjects (FetchProcess.java:265)
+    at org.eclipse.jgit.transport.FetchProcess.executeImp (FetchProcess.java:163)
+    at org.eclipse.jgit.transport.FetchProcess.execute (FetchProcess.java:124)
+    at org.eclipse.jgit.transport.Transport.fetch (Transport.java:1271)
+    at org.eclipse.jgit.api.FetchCommand.call (FetchCommand.java:243)
+    at pl.project13.maven.git.JGitProvider.fetch (JGitProvider.java:352)
+    at pl.project13.maven.git.JGitProvider.getAheadBehind (JGitProvider.java:339)
+    at pl.project13.maven.git.GitDataProvider.lambda$loadGitData$17 (GitDataProvider.java:174)
+    at pl.project13.maven.git.GitDataProvider.lambda$memoize$23 (GitDataProvider.java:272)
+    at pl.project13.maven.git.GitDataProvider.lambda$loadGitData$18 (GitDataProvider.java:175)
+    at pl.project13.maven.git.GitDataProvider.maybePut (GitDataProvider.java:255)
+    at pl.project13.maven.git.GitDataProvider.loadGitData (GitDataProvider.java:175)
+    at pl.project13.maven.git.GitCommitIdMojo.loadGitDataWithJGit (GitCommitIdMojo.java:604)
+    at pl.project13.maven.git.GitCommitIdMojo.loadGitData (GitCommitIdMojo.java:563)
+    at pl.project13.maven.git.GitCommitIdMojo.execute (GitCommitIdMojo.java:458)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: org.eclipse.jgit.errors.MissingObjectException: Missing delta base 192edc94b0ec2b6f17ef07e8fd00d79d45e24164
+    at org.eclipse.jgit.transport.PackParser.resolveDeltasWithExternalBases (PackParser.java:910)
+    at org.eclipse.jgit.transport.PackParser.processDeltas (PackParser.java:621)
+    at org.eclipse.jgit.transport.PackParser.parse (PackParser.java:584)
+    at org.eclipse.jgit.internal.storage.file.ObjectDirectoryPackParser.parse (ObjectDirectoryPackParser.java:197)
+    at org.eclipse.jgit.transport.PackParser.parse (PackParser.java:529)
+    at org.eclipse.jgit.transport.BasePackFetchConnection.receivePack (BasePackFetchConnection.java:823)
+    at org.eclipse.jgit.transport.BasePackFetchConnection.doFetch (BasePackFetchConnection.java:393)
+    at org.eclipse.jgit.transport.TransportHttp$SmartHttpFetchConnection.doFetch (TransportHttp.java:1084)
+    at org.eclipse.jgit.transport.BasePackFetchConnection.fetch (BasePackFetchConnection.java:323)
+    at org.eclipse.jgit.transport.BasePackFetchConnection.fetch (BasePackFetchConnection.java:314)
+    at org.eclipse.jgit.transport.FetchProcess.fetchObjects (FetchProcess.java:265)
+    at org.eclipse.jgit.transport.FetchProcess.executeImp (FetchProcess.java:163)
+    at org.eclipse.jgit.transport.FetchProcess.execute (FetchProcess.java:124)
+    at org.eclipse.jgit.transport.Transport.fetch (Transport.java:1271)
+    at org.eclipse.jgit.api.FetchCommand.call (FetchCommand.java:243)
+    at pl.project13.maven.git.JGitProvider.fetch (JGitProvider.java:352)
+    at pl.project13.maven.git.JGitProvider.getAheadBehind (JGitProvider.java:339)
+    at pl.project13.maven.git.GitDataProvider.lambda$loadGitData$17 (GitDataProvider.java:174)
+    at pl.project13.maven.git.GitDataProvider.lambda$memoize$23 (GitDataProvider.java:272)
+    at pl.project13.maven.git.GitDataProvider.lambda$loadGitData$18 (GitDataProvider.java:175)
+    at pl.project13.maven.git.GitDataProvider.maybePut (GitDataProvider.java:255)
+    at pl.project13.maven.git.GitDataProvider.loadGitData (GitDataProvider.java:175)
+    at pl.project13.maven.git.GitCommitIdMojo.loadGitDataWithJGit (GitCommitIdMojo.java:604)
+    at pl.project13.maven.git.GitCommitIdMojo.loadGitData (GitCommitIdMojo.java:563)
+    at pl.project13.maven.git.GitCommitIdMojo.execute (GitCommitIdMojo.java:458)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:137)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:210)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:156)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:148)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:117)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:128)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:305)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:957)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:289)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:193)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+[INFO] Collected git.local.branch.ahead with value NO_REMOTE
+[INFO] Collected git.local.branch.behind with value NO_REMOTE
+[INFO] Collected git.build.time with value 2021-01-02T16:26:25+0000
+[INFO] Collected git.build.version with value 0.0.1-SNAPSHOT
+[INFO] Collected git.build.host with value simonjamesrowe-start-spring-io-5q69t-21-from-build-pack-w-m64w2
+[INFO] including property git.tags in results
+[INFO] including property git.closest.tag.commit.count in results
+[INFO] including property git.build.version in results
+[INFO] including property git.commit.user.name in results
+[INFO] including property git.commit.id.abbrev in results
+[INFO] including property git.branch in results
+[INFO] including property git.build.host in results
+[INFO] including property git.commit.id.describe-short in results
+[INFO] including property git.total.commit.count in results
+[INFO] including property git.commit.id.describe in results
+[INFO] including property git.build.user.email in results
+[INFO] including property git.commit.id in results
+[INFO] including property git.commit.message.short in results
+[INFO] including property git.commit.user.email in results
+[INFO] including property git.closest.tag.name in results
+[INFO] including property git.local.branch.ahead in results
+[INFO] including property git.commit.time in results
+[INFO] including property git.local.branch.behind in results
+[INFO] including property git.build.time in results
+[INFO] including property git.build.user.name in results
+[INFO] including property git.dirty in results
+[INFO] including property git.commit.message.full in results
+[INFO] including property git.remote.origin.url in results
+[INFO] Writing properties file to [/workspace/source/start-site/target/classes/git.properties] (for module start.spring.io website)...
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.4.1:build-info (build-info) @ start-site ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ start-site ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 27 resources
+[INFO] 
+[INFO] --- flatten-maven-plugin:1.1.0:flatten (flatten) @ start-site ---
+[INFO] Generating flattened POM of project io.spring.start:start-site:jar:0.0.1-SNAPSHOT...
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ start-site ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 102 source files to /workspace/source/start-site/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ start-site ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ start-site ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 58 source files to /workspace/source/start-site/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M1:test (default-test) @ start-site ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ start-site ---
+[INFO] Building jar: /workspace/source/start-site/target/start-site.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.4.1:repackage (repackage) @ start-site ---
+[INFO] Attaching repackaged archive /workspace/source/start-site/target/start-site-exec.jar with classifier exec
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ start-site ---
+[INFO] Installing /workspace/source/start-site/target/start-site.jar to /home/jenkins/.mvnrepository/io/spring/start/start-site/0.0.1-SNAPSHOT/start-site-0.0.1-SNAPSHOT.jar
+[INFO] Installing /workspace/source/start-site/.flattened-pom.xml to /home/jenkins/.mvnrepository/io/spring/start/start-site/0.0.1-SNAPSHOT/start-site-0.0.1-SNAPSHOT.pom
+[INFO] Installing /workspace/source/start-site/target/start-site-exec.jar to /home/jenkins/.mvnrepository/io/spring/start/start-site/0.0.1-SNAPSHOT/start-site-0.0.1-SNAPSHOT-exec.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for start.spring.io 0.0.1-SNAPSHOT:
+[INFO] 
+[INFO] start.spring.io .................................... SUCCESS [  6.489 s]
+[INFO] start.spring.io client ............................. SUCCESS [  4.779 s]
+[INFO] start.spring.io website ............................ SUCCESS [01:23 min]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:45 min
+[INFO] Finished at: 2021-01-02T16:26:39Z
+[INFO] ------------------------------------------------------------------------
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-build-skaffold-version[0m
+v1.0.1
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Retrieving image manifest openjdk:11-jre-slim 
+[36mINFO[0m[0001] Retrieving image manifest openjdk:11-jre-slim 
+[36mINFO[0m[0002] Built cross stage deps: map[]                
+[36mINFO[0m[0002] Retrieving image manifest openjdk:11-jre-slim 
+[36mINFO[0m[0003] Retrieving image manifest openjdk:11-jre-slim 
+[36mINFO[0m[0004] Executing 0 build triggers                   
+[36mINFO[0m[0004] cmd: EXPOSE                                  
+[36mINFO[0m[0004] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0004] Resolving srcs [pom.xml target/lib*]...      
+[36mINFO[0m[0005] Checking for cached layer harbor.simonjamesrowe.com/todo/cache:eb2a04e21e1145d244bac81d41de7a4f7427d7a91bd568a9452e4a9611aaeeb9... 
+[36mINFO[0m[0005] No cached layer found for cmd COPY pom.xml target/lib* /opt/lib/ 
+[36mINFO[0m[0005] Unpacking ****fs as cmd COPY pom.xml target/lib* /opt/lib/ requires it. 
+[36mINFO[0m[0011] ENV PORT 8080                                
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] ENV CLASSPATH /opt/lib                       
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] EXPOSE 8080                                  
+[36mINFO[0m[0011] cmd: EXPOSE                                  
+[36mINFO[0m[0011] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] Resolving srcs [pom.xml target/lib*]...      
+[36mINFO[0m[0013] COPY pom.xml target/lib* /opt/lib/           
+[36mINFO[0m[0013] Resolving srcs [pom.xml target/lib*]...      
+[36mINFO[0m[0014] Resolving 1 paths                            
+[36mINFO[0m[0014] Taking snapshot of files...                  
+[36mINFO[0m[0014] Pushing layer harbor.simonjamesrowe.com/todo/cache:eb2a04e21e1145d244bac81d41de7a4f7427d7a91bd568a9452e4a9611aaeeb9 to cache now 
+[36mINFO[0m[0014] COPY start-site/target/start-site-exec.jar /opt/app.jar 
+[36mINFO[0m[0014] Resolving 1 paths                            
+[36mINFO[0m[0014] Taking snapshot of files...                  
+[36mINFO[0m[0015] Pushing layer harbor.simonjamesrowe.com/todo/cache:7e6ae6aa14f21f01f7924129f320953a76b1f239a1eddc7b95d178b7b7feef2f to cache now 
+[36mINFO[0m[0015] WORKDIR /opt                                 
+[36mINFO[0m[0015] cmd: workdir                                 
+[36mINFO[0m[0015] Changed working directory to /opt            
+[36mINFO[0m[0015] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0015] CMD ["java", "-jar", "app.jar"]              
+[36mINFO[0m[0015] No files changed in this command, skipping snapshotting. 
+[33mWARN[0m[0015] error uploading layer to cache: failed to push to destination harbor.simonjamesrowe.com/todo/cache:eb2a04e21e1145d244bac81d41de7a4f7427d7a91bd568a9452e4a9611aaeeb9: HEAD https://harbor.simonjamesrowe.com/v2/todo/cache/blobs/sha256:b7953282ee3aefbd86f5a5197b1c366000583567714f73246c2de2ceee6c8763: unsupported status code 401 
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/start to an unshallow repository
+Generating change log from git ref 12682fe4ecdc2eb7f98404e249a45b3928a6a3c4 => 2456726afc8cf22df37a86d1a462570d8c0bad19
+Associating user simon-rowe in users.jenkins.io with email simon.rowe@gmail.com to git GitProvider user with login simon-rowe-0 as emails match
+Adding label jenkins.io/git-github-userid=simon-rowe-0 to user simon-rowe in users.jenkins.io
+Associating user simon-rowe in users.jenkins.io with email simon.rowe@gmail.com to git GitProvider user with login simon-rowe-0 as emails match
+Adding label jenkins.io/git-github-userid=simon-rowe-0 to user simon-rowe in users.jenkins.io
+Finding issues in commit messages using git format
+WARNING: No release found for simonjamesrowe/start.spring.io and tag v0.0.18 so creating a new release
+Updated the release information at https://github.com/simonjamesrowe/start.spring.io/releases/tag/v0.0.18
+generated: /workspace/source/charts/start/templates/release.yaml
+Created Release start-spring-io-0-0-18 resource in namespace **
+Updating PipelineActivity simonjamesrowe-start-spring-io-master-21 with version 0.0.18
+Updated PipelineActivities simonjamesrowe-start-spring-io-master-21 with release notes URL: https://github.com/simonjamesrowe/start.spring.io/releases/tag/v0.0.18
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file start-0.0.18.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32msimonjamesrowe-start-spring-io-5q69t-21[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app start version 0.0.18 to namespace **-staging
+Created Pull Request: https://github.com/simonjamesrowe/environment-simonjamesrowe-staging/pull/10
+Added label updatebot to Pull Request https://github.com/simonjamesrowe/environment-simonjamesrowe-staging/pull/10
+got git provider status pending from PR https://github.com/simonjamesrowe/environment-simonjamesrowe-staging/pull/10
+got git provider status pending from PR https://github.com/simonjamesrowe/environment-simonjamesrowe-staging/pull/10
+got git provider status pending from PR https://github.com/simonjamesrowe/environment-simonjamesrowe-staging/pull/10
+Pull Request https://github.com/simonjamesrowe/environment-simonjamesrowe-staging/pull/10 is merged at sha 6f5a38891f90cc281b0e0f718600ad95698836b9
+Pull Request merged but we are not waiting for the update pipeline to complete!
