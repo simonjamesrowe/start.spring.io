@@ -16,6 +16,7 @@ public class GradleBuildCustomiser extends KotlinDslGradleBuildWriter implements
 
 	@Override
 	public void customize(GradleBuild build) {
+		build.plugins().add("maven-publish");
 		build.repositories().add(MavenRepository
 				.withIdAndUrl("simonjamesrowe", "https://nexus-jx.simonjamesrowe.com/repository/maven-group/").build());
 		build.dependencies().add("component-test");
