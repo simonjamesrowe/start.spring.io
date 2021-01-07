@@ -878,6 +878,12 @@ initializr:
         - name: Quartz Scheduler
           id: quartz
           description: Schedule jobs using Quartz.
+        - name: Model
+          id: model
+          groupId: com.simonjamesrowe
+          artifactId: model
+          version: 0.0.4
+          description: Data Structure objects for www.simonjamesrowe.com
         - name: Spring cache abstraction
           id: cache
           description: Provides cache-related operations, such as the ability to update the content of the cache, but does not provide the actual data store.
@@ -998,7 +1004,7 @@ initializr:
           description: Spring Component Tests with Test Containers
           groupId: com.simonjamesrowe
           artifactId: component-test
-          version: 0.0.5
+          version: 0.0.7
           scope: test
           starter: false
           links:
