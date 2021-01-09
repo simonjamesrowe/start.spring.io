@@ -12,7 +12,8 @@ COPY pom.xml target/lib* /opt/lib/
 RUN mkdir -p /opt/templates
 COPY start-site/src/main/resources/templates /opt/templates
 
+
 COPY start-site/target/start-site-exec.jar /opt/app.jar
-ENV TEMPLATE_ROOT_PATH=/opt/templates
+ENV TEMPLATE_ROOT_PATH=/opt
 WORKDIR /opt
 CMD ["java", "-jar", "app.jar"]
