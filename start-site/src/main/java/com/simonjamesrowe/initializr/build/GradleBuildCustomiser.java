@@ -24,6 +24,7 @@ public class GradleBuildCustomiser extends KotlinDslGradleBuildWriter implements
 
 	@Override
 	protected void writeTasks(IndentingWriter writer, GradleTaskContainer tasks) {
+		super.writeTasks(writer, tasks);
 		if (mutableProjectDescription.getArtifactId().startsWith("lib")) {
 			String extraTasks = "\ntasks.getByName<Jar>(\"jar\") {\n" + "\tenabled = true\n" + "}\n" + "\n"
 					+ "tasks.getByName<Jar>(\"bootJar\") {\n" + "\tenabled = false\n" + "}";
