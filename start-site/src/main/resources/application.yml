@@ -257,6 +257,20 @@ initializr:
           scope: annotationProcessor
           description: Java annotation library which helps to reduce boilerplate code.
           starter: false
+        - name: Open Api Generator
+          id: openapi-generator
+          groupId: de.qaware.tools.openapi-generator-for-spring
+          artifactId: openapi-generator-for-spring-starter
+          version: 1.0.1
+          description: This library automagically generates a OpenApi v3 specification at runtime for Spring Boot applications.
+          starter: false
+        - name: Problem
+          id: problem
+          groupId: org.zalando
+          artifactId: jackson-datatype-problem
+          version: 0.25.0
+          description: Problem is a library that implements application/problem+json
+          starter: false
         - name: Spring Configuration Processor
           id: configuration-processor
           groupId: org.springframework.boot
@@ -882,7 +896,7 @@ initializr:
           id: model
           groupId: com.simonjamesrowe
           artifactId: model
-          version: 0.0.4
+          version: 0.0.6
           description: Data Structure objects for www.simonjamesrowe.com
         - name: Spring cache abstraction
           id: cache
@@ -992,6 +1006,20 @@ initializr:
               description: Wavefront for Spring Boot repository
     - name: Testing
       content:
+        - name: Spring Mockk
+          id: spring-mockk
+          description: Spring Mockk
+          scope: test
+          groupId: com.ninja-squad
+          artifactId: springmockk
+          version: 3.0.1
+        - name: Awaitility
+          id: awaitility
+          description: A Java DSL for synchronizing asynchronous operations
+          scope: test
+          groupId: org.awaitility
+          artifactId: awaitility
+          version: 4.0.3
         - name: Spring REST Docs
           id: restdocs
           description: Document RESTful services by combining hand-written with Asciidoctor and auto-generated snippets produced with Spring MVC Test.
