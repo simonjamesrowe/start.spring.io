@@ -10,7 +10,7 @@ COPY pom.xml target/lib* /opt/lib/
 # but at least this means we don't have to guess the name
 # we could do with a better way to know the name - or to always create an app.jar or something
 RUN mkdir -p /opt/templates
-COPY src/main/resources/templates /opt/templates
+COPY start-site/src/main/resources/templates /opt/templates
 
 COPY start-site/target/start-site-exec.jar /opt/app.jar
 ENV TEMPLATE_ROOT_PATH=/opt/templates
