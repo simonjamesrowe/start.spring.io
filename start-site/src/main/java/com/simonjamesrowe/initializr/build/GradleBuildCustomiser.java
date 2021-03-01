@@ -20,6 +20,8 @@ public class GradleBuildCustomiser extends KotlinDslGradleBuildWriter implements
 		build.repositories().add(MavenRepository
 				.withIdAndUrl("simonjamesrowe", "https://nexus-jx.simonjamesrowe.com/repository/maven-group/").build());
 		build.dependencies().add("component-test");
+		build.dependencies().add("logback-logstash-encoder");
+		build.dependencies().add("logback-classic");
 	}
 
 	@Override
